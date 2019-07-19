@@ -1,0 +1,26 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "//github.com/reinel215/selling.git"
+  },
+  "author": "reinel arteaga",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.8.6",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
