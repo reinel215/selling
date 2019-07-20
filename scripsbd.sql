@@ -11,7 +11,7 @@ CREATE TABLE producto(
     id_usuario  INT NOT NULL
     nombre VARCHAR(100),
     descripcion VARCHAR(500),
-    imagen BYTEA,
+    imagen VARCHAR(5000),
     precio  FLOAT,
     cantidad INT,
     
