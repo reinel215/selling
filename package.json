@@ -24,6 +24,7 @@
     "react-dom": "^16.8.6",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
+    "react-tag-autocomplete": "^5.11.1",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
   },

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import ReactDom from 'react-dom';
-import Componente from './Componente'
+import IngresarProducto from './IngresarProducto';
 
 
 class Principal extends Component {
@@ -9,7 +9,10 @@ class Principal extends Component {
 
         return(
                     <div className="container">
-                        <Componente titulo="hola mundo" ancho="50rem"></Componente>
+                        <IngresarProducto titulo="Ingrese su producto..." ancho="20rem">
+
+                        </IngresarProducto>
+
                     </div>
         )
     }
