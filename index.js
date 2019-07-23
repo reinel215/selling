@@ -3,7 +3,7 @@ const express_session= require('express-session');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
-
+const router = require('./routes/routes.js');
 
 
 
@@ -29,6 +29,9 @@ App.use(bodyParser.urlencoded({extended: true}));
 App.use(morgan('dev'));
 App.use(bodyParser.json());
 
+
+//routes
+App.use('/', router);
 
 
 //static files 
