@@ -1,0 +1,4 @@
+DROP TABLE usuario CASCADE;
+DROP TABLE producto CASCADE;
+DROP TABLE categoria CASCADE;
+DROP TABLE categorizado CASCADE;
