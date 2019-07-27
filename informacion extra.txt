@@ -1,0 +1,5 @@
+https://medium.com/@simonhoyos/creemos-un-blog-con-react-y-c%C3%B3mo-enrutar-nuestra-aplicaci%C3%B3n-con-react-router-parte-ii-44835476bbcf
+para la creacion de una ruta con parametros URI
+https://reacttraining.com/react-router/web/example/url-params
+
+

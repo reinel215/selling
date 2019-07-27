@@ -162,9 +162,36 @@
 
 
 
-
-  .imagen_producto{
+/*el borde para la imagen en insertarProducto*/
+.imagen_producto{
     width: 100%;
     height: 200px;
-    border: 5px black double;
-  }
+    border: 5px rgb(0, 0, 0) double;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+  background-color: #92b3ce;
+}
+
+
+
+
+
+
+
+
+
+
