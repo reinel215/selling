@@ -20,7 +20,8 @@ const producto_insertText="INSERT INTO producto(nombre,descripcion,precio,cantid
 const categorizado_insertText="INSERT INTO categorizado(id_producto,id_categoria) VALUES ($1,$2)";
 const categoria_insertText="INSERT INTO categoria(nombre) SELECT $1 WHERE NOT EXISTS (SELECT A.id_categoria from categoria AS A WHERE A.nombre=$2)"; 
 const categoria_selectText="SELECT nombre,id_categoria from categoria AS A WHERE A.nombre=$1";
-
+const producto_muestraText="SELECT id_producto,nombre,imagen,precio,cantidad FROM producto WHERE id_producto>$1 ORDER BY id_producto DESC LIMIT 40;";
+const producto_cuantosText="SELECT COUNT(*) FROM PRODUCTO;";
 
 
 
@@ -99,6 +100,36 @@ module.exports={
         .catch(error => console.error(error))
 
        
+    },
+
+
+
+
+
+
+
+    mostrarProductos:function(req,res,next){
+
+        consulta(producto_muestraText,[((req.body.pagina)-1)*40],1)
+        .then((productos)=>{
+            res.json(productos);
+        })
+        .catch(err =>{
+            console.error("hubo un error en la muestra de los productos",err);
+            res.json({mensaje:"error"});
+        })
+    },
+
+
+
+
+
+
+    contarProductos:function(req,res,next){
+        consulta(producto_cuantosText)
+        .then(cantidad=>{
+            res.json(cantidad.count)
+        })
     }
 
 }

@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import ReactDom from 'react-dom';
-import { Route, Switch,BrowserRouter,Link } from "react-router-dom";
+import { Route, Switch,BrowserRouter,Link,Redirect } from "react-router-dom";
 
 
 import IngresarProducto from './IngresarProducto';
 import Prueba from './Prueba';
-import Cardproducto from './Cardproducto';
-
+import MuestraProductos from './MuestraProductos'
+import Paginacion from './Paginacion';
 
 
 class Principal extends Component {
@@ -16,15 +16,16 @@ class Principal extends Component {
         return(
                     <div className="container">
                         <BrowserRouter>    
+                        <Redirect from="/" to="/inicio"/>
                             <Switch>
 
 
 
                                 <Route 
-                                path="/" 
+                                path="/inicio/pagina/:pagina" 
                                 exact
-                                render={()=><Cardproducto imagen="data:image/jpeg;base64,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" nombre="Maria Alejandra Rios Blancos" precio="150" cantidad="12"/>
-                                }/>
+                                render={(props)=><MuestraProductos {...props} />}
+                                />
 
 
 
@@ -35,11 +36,15 @@ class Principal extends Component {
                                 render={()=><IngresarProducto titulo="Ingrese su producto..." ancho="20rem"/>
                                 }/>
 
+                                <Route render={()=>{<h1>NADA QUE VER AQUI</h1>}} />
+
 
                             </Switch>
-                            <Link to="/"><button>HOME</button></Link>
-                            <Link to="/ingresar_producto"><button>ingreasr producto</button></Link>
+                            <Link to="/inicio"><button>HOME</button></Link>
+                            <Link to="/ingresar_producto"><button>ingresar producto</button></Link>
+                            <Paginacion/>
                         </BrowserRouter>
+
                     </div>
         )
     }
