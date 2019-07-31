@@ -11,30 +11,31 @@ class MuestraProductos extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps);
+        let {pagina}=nextProps.match.params
 
-    componentDidMount(){
-        let {pagina}=this.props.match.params
+        console.log(pagina);
 
-
-
-      fetch('/inicio/pagina/muestra',{
-        method: 'POST',
-        body: JSON.stringify({pagina}),
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-      })
-      .then(res => res.json())
-      .then(data => { 
-        this.setState({
-            productos:data
-        });
-      })
-      .catch(err => console.log(err.code));
+        fetch('/inicio/pagina/muestra',{
+          method: 'POST',
+          body: JSON.stringify({pagina}),
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          }
+        })
+        .then(res => res.json())
+        .then(data => { 
+          this.setState({
+              productos:data
+          });
+        })
+        .catch(err => console.log(err.code));
     }
 
 
+  
 
     render(){
         return(

@@ -5,11 +5,19 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        rules: [{
-            use : 'babel-loader',
-            test: /\.js$/,
-            exclude : /node_modules/
-        }]
+        rules: [
+            {
+                use :'babel-loader',
+                test: /\.js$/,
+                exclude : /node_modules/
+            },
+            {
+                use:'file-loader',
+                test:/\.jpg/,
+                exclude:/node_modules/
+            }
+    
+        ]
     }
 
 }

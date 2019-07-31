@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
+import imagen from '../public/foto.jpg';
+
 
 const estilo={
     width: "12rem",
@@ -40,16 +42,11 @@ class Cardproducto extends Component {
 
 
 
-    componentDidMount(){
-        console.log(this.props);
-    }
-
     render(){
         return( 
-           
                 <div className="card" style={estilo}>
                     <Link to="/algo">
-                        <img src={this.props.imagen?this.props.imagen:"./foto.jpg"} style={Cardproducto_imagen} alt="Error"></img>
+                        <img src={this.props.imagen?this.props.imagen:imagen} style={Cardproducto_imagen} alt="Error"></img>
                         <div className="card-body" style={Cardproducto_BodyCard}>
                           <h5 className="card-title" style={{marginTop:"40px",color:"black",textAlign:"center"}}><b>{this.props.nombre}</b></h5>
                           <p className="card-text" style={{color:"black",textAlign:"center"}}> {"precio:"+this.props.precio}</p>

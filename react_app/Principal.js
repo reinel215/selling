@@ -16,7 +16,7 @@ class Principal extends Component {
         return(
                     <div className="container">
                         <BrowserRouter>    
-                        <Redirect from="/" to="/inicio"/>
+                        <Redirect from="/" to="/inicio/pagina/:pagina"/>
                             <Switch>
 
 
