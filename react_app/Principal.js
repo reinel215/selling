@@ -9,14 +9,20 @@ import MuestraProductos from './MuestraProductos'
 import Paginacion from './Paginacion';
 
 
+
+const containerEstilo={
+    maxWidth: "100%"
+}
+
+
 class Principal extends Component {
 
     render(){
 
         return(
-                    <div className="container">
+                    <div className="container" style={containerEstilo}>
                         <BrowserRouter>    
-                        <Redirect from="/" to="/inicio/pagina/:pagina"/>
+                        <Redirect from="/" to="/inicio/pagina/1"/>
                             <Switch>
 
 

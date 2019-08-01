@@ -2,6 +2,18 @@ import React,{Component} from 'react';
 import Cardproducto from './Cardproducto';
 
 
+
+const muestra_productosEstilo={
+    marginLeft:0,
+    width:"75%"
+}
+
+
+
+
+
+
+
 class MuestraProductos extends Component {
     constructor(props){
         super(props);
@@ -9,13 +21,12 @@ class MuestraProductos extends Component {
         this.state={
             productos:[]
         }
+        this.buscarProductos=this.buscarProductos.bind(this);
     }
 
-    componentWillReceiveProps(nextProps){
-        console.log(nextProps);
-        let {pagina}=nextProps.match.params
 
-        console.log(pagina);
+
+    buscarProductos(pagina){
 
         fetch('/inicio/pagina/muestra',{
           method: 'POST',
@@ -34,12 +45,20 @@ class MuestraProductos extends Component {
         .catch(err => console.log(err.code));
     }
 
+    componentWillReceiveProps(nextProps){
+ 
+        let {pagina}=nextProps.match.params
+        this.buscarProductos(pagina);
+    }
 
-  
+
+  componentDidMount(){
+    this.buscarProductos(1);
+  }
 
     render(){
         return(
-            <div className="muestra_productos">
+            <div className="muestra_productos" style={muestra_productosEstilo}>
                 {//codigo comienza aqui
                     this.state.productos.map(producto =>{
                         return <div style={{float:"left", marginRight:"15px",marginLeft:"15px"}} key={producto.id_producto}>
