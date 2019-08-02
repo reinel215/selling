@@ -19,7 +19,7 @@ class MuestraProductos extends Component {
         super(props);
 
         this.state={
-            productos:[]
+            productos:[],
         }
         this.buscarProductos=this.buscarProductos.bind(this);
     }
@@ -37,7 +37,7 @@ class MuestraProductos extends Component {
           }
         })
         .then(res => res.json())
-        .then(data => { 
+        .then(data => {
           this.setState({
               productos:data
           });

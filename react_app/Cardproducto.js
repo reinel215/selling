@@ -29,7 +29,17 @@ const Cardproducto_imagen={
 const Cardproducto_BodyCard={
     border:"3px #111255 solid",
     borderRadius:"5%",
-    backgroundColor:"#c9c9db"
+    backgroundColor:"#c9c9db",
+    height:"12rem"
+}
+
+
+const prueba={
+    overflow:"hidden",
+    whiteSpace:"nowrap",
+    textOverflow: "ellipsis",
+    width:"9rem",
+    display:"inline-block",
 }
 
 
@@ -46,9 +56,9 @@ class Cardproducto extends Component {
         return( 
                 <div className="card" style={estilo}>
                     <Link to="/algo">
-                        <img src={this.props.imagen?this.props.imagen:imagen} style={Cardproducto_imagen} alt="Error"></img>
+                        <img src={this.props.imagen?this.props.imagen:"./foto.jpg"} style={Cardproducto_imagen} alt="Error"></img>
                         <div className="card-body" style={Cardproducto_BodyCard}>
-                          <h5 className="card-title" style={{marginTop:"40px",color:"black",textAlign:"center"}}><b>{this.props.nombre}</b></h5>
+                          <h5 className="card-title" style={{marginTop:"40px",color:"black",textAlign:"center"}}><b style={prueba}>{this.props.nombre}</b></h5>
                           <p className="card-text" style={{color:"black",textAlign:"center"}}> {"precio:"+this.props.precio}</p>
                           <div style={{display:"table",marginLeft:"auto",marginRight:"auto"}}> 
                             <span className="badge badge-pill badge-success" style={{display:"table-cell",verticalAlign:"middle"}}>cantidad:{this.props.cantidad}</span>

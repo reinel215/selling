@@ -46,7 +46,7 @@ class Principal extends Component {
 
 
                             </Switch>
-                            <Link to="/inicio"><button>HOME</button></Link>
+                            <Link to="/inicio/pagina/1"><button>HOME</button></Link>
                             <Link to="/ingresar_producto"><button>ingresar producto</button></Link>
                             <Paginacion/>
                         </BrowserRouter>

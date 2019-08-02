@@ -11,7 +11,9 @@ const path = require('path');
 //obtener la cantidad de productos para la paginacion
 router.get('/inicio/cantidad',controllers.contarProductos);
 
-
+router.get('/inicio/pagina/foto.jpg',(req,res,next)=>{
+    res.sendFile(path.join(__dirname,'..','/public/foto.jpg'));
+});
 
 
 /**************POST'S****************/
