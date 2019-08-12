@@ -4,6 +4,20 @@ import {Link} from 'react-router-dom'
 
 
 
+const navEstilo={
+    clear:"left",
+    marginTop:"2%"
+}
+
+
+
+
+
+
+
+
+
+
 class Paginacion extends Component {
 
     constructor(props){
@@ -56,7 +70,7 @@ class Paginacion extends Component {
     render(){
         return(
             
-            <nav aria-label="Page navigation example">
+            <nav aria-label="Page navigation example" style={navEstilo}>
               <ul className="pagination">
                 <li className="page-item"><a className="page-link" href="#">Previous</a></li>
                   {//codigo comienza aqui  

@@ -7,6 +7,7 @@ import IngresarProducto from './IngresarProducto';
 import Prueba from './Prueba';
 import MuestraProductos from './MuestraProductos'
 import Paginacion from './Paginacion';
+import Footer from './footer/Footer'
 
 
 
@@ -46,11 +47,11 @@ class Principal extends Component {
 
 
                             </Switch>
+                            <Paginacion/>
                             <Link to="/inicio/pagina/1"><button>HOME</button></Link>
                             <Link to="/ingresar_producto"><button>ingresar producto</button></Link>
-                            <Paginacion/>
                         </BrowserRouter>
-
+                        <Footer/>
                     </div>
         )
     }

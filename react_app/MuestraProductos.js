@@ -5,7 +5,9 @@ import Cardproducto from './Cardproducto';
 
 const muestra_productosEstilo={
     marginLeft:0,
-    width:"75%"
+    width:"72%",
+    overflow: "hidden",
+    float:"left"
 }
 
 
@@ -58,14 +60,21 @@ class MuestraProductos extends Component {
 
     render(){
         return(
-            <div className="muestra_productos" style={muestra_productosEstilo}>
-                {//codigo comienza aqui
-                    this.state.productos.map(producto =>{
-                        return <div style={{float:"left", marginRight:"15px",marginLeft:"15px"}} key={producto.id_producto}>
-                                    <Cardproducto imagen={producto.imagen} nombre={producto.nombre} precio={producto.precio} cantidad={producto.cantidad} />
-                               </div>
-                    })
-                }
+            <div style={{width:"100%"}}>
+                <div className="muestra_productos" style={muestra_productosEstilo}>
+                    {//codigo comienza aqui
+                        this.state.productos.map(producto =>{
+                            return <div style={{float:"left", marginRight:"15px",marginLeft:"15px"}} key={producto.id_producto}>
+                                        <Cardproducto imagen={producto.imagen} nombre={producto.nombre} precio={producto.precio} cantidad={producto.cantidad} />
+                                   </div>
+                        })
+                    }
+                </div>
+
+
+                <div style={{float:"right",width:"28%"}}>
+                    hola mundo
+                </div>
             </div>
         )
     }
