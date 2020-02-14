@@ -15,7 +15,12 @@ module.exports = {
                 use:'file-loader',
                 test:/\.jpg/,
                 exclude:/node_modules/
-            }
+            },
+            {
+                use: ['style-loader', 'css-loader'],
+                test: /\.css$/,  
+                exclude: /node_modules/
+           }
     
         ]
     }

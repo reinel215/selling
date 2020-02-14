@@ -8,7 +8,7 @@ import Prueba from './Prueba';
 import MuestraProductos from './MuestraProductos'
 import Paginacion from './Paginacion';
 import Footer from './footer/Footer'
-
+import Navbar from './navbar/Navbar'
 
 
 const containerEstilo={
@@ -22,7 +22,8 @@ class Principal extends Component {
 
         return(
                     <div className="container" style={containerEstilo}>
-                        <BrowserRouter>    
+                        <BrowserRouter>  
+                        <Navbar/>
                         <Redirect from="/" to="/inicio/pagina/1"/>
                             <Switch>
 
