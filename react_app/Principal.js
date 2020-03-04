@@ -4,11 +4,23 @@ import { Route, Switch,BrowserRouter,Link,Redirect } from "react-router-dom";
 
 
 import IngresarProducto from './IngresarProducto';
-import Prueba from './Prueba';
 import MuestraProductos from './MuestraProductos'
 import Paginacion from './Paginacion';
 import Footer from './footer/Footer'
 import Navbar from './navbar/Navbar'
+import Menu from './menu/Menu';
+import Categoria from './menu/Categoria';
+
+
+
+
+//iconos
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import {faHome} from '@fortawesome/free-solid-svg-icons';
+import {faExclamation} from '@fortawesome/free-solid-svg-icons'
+
+
 
 
 const containerEstilo={
@@ -24,9 +36,40 @@ class Principal extends Component {
                     <div className="container" style={containerEstilo}>
                         <BrowserRouter>  
                         <Navbar/>
-                        <Redirect from="/" to="/inicio/pagina/1"/>
-                            <Switch>
 
+
+
+
+
+
+                        {/*menu lateral con las 3 categorias*/}
+                        <Menu>
+                            <Link to="/inicio/pagina/1">
+                                <Categoria height="25" width="60" color="#d66c6493" colorA="#f33629ad" mensaje=" HOME">
+                                    <FontAwesomeIcon icon={faHome}/>
+                                </Categoria>
+                            </Link>
+
+                            <Categoria height="25" width="60" color="#3ec03e75" colorA="#3ec03e" mensaje=" FACEBOOK" alturaExpandido="60" anchuraExpandido="140">
+                                <FontAwesomeIcon icon={faFacebook}/>
+                            </Categoria>
+
+                            <Categoria height="25" width="60" color="#3e95e69d" colorA="#3e95e6" mensaje=" INFORMACION" alturaExpandido="60" anchuraExpandido="150">
+                                <FontAwesomeIcon icon={faExclamation}/>
+                            </Categoria>
+                        </Menu>
+
+
+
+
+
+
+
+
+
+
+                            <Switch>
+                                <Redirect  exact from="/" to="/inicio/pagina/1"/>
 
 
                                 <Route 
@@ -43,8 +86,6 @@ class Principal extends Component {
                                 path="/ingresar_producto" 
                                 render={()=><IngresarProducto titulo="Ingrese su producto..." ancho="20rem"/>
                                 }/>
-
-                                <Route render={()=>{<h1>NADA QUE VER AQUI</h1>}} />
 
 
                             </Switch>

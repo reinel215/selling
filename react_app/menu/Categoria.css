@@ -1,0 +1,20 @@
+.categoria{
+    overflow: hidden;
+
+    margin-left: auto;
+
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+
+    border-right: none;
+
+
+    display: block;
+
+
+
+    cursor: pointer;
+
+
+}

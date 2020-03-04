@@ -291,3 +291,8 @@ footer{
 }
 
 
+
+/*quitarle el subrayado a los links */
+a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,13 @@
+.menu_fixed{
+
+    position: fixed;
+    height: 0px;
+    overflow: visible;
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
